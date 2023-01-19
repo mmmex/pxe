@@ -42,7 +42,7 @@
 
 ![Screenshot5](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot5.png)
 
-Можем проверить настройки, которые задавали в [kickstart скрипте](centos_pxe/ansible/templates/ks.j2):
+Можем проверить настройки, которые задавали в [kickstart скрипте](centos_pxe/ansible/templates/ks.j2). Логин/пароль: `root`/`123`
 
 ![Screenshot6](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot6.png)
 
