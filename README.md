@@ -16,13 +16,13 @@
 
 ### Запуск проекта
 
-* Клонируем репозиторий: `git clone `
+* Клонируем репозиторий: `git clone https://github.com/mmmex/pxe.git`
 
 * Переходим в каталог: `cd pxe/centos_pxe`
 
 * Запуск: `vagrant up`
 
-Настройка ВМ `pxeserver` будет выполнена автоматически. Шаг `Download ISO image CentOS 8.4.2105` может занять очень длительное время. После выполнения скрипта ansible для `pxeserver` будет автоматически выполнен запуск ВМ `pxeclient` с опцией `gui = true`, т.е. появится окно virtualbox в котором увидеть меню загрузчика и по умолчанию будет выбрана автоматическая установка дистрибутива Centos8.
+Настройка ВМ `pxeserver` будет выполнена автоматически. Шаг `Download ISO image CentOS 8.4.2105` может занять очень длительное время. После выполнения [скрипта ansible](centos_pxe/ansible/provision.yml) для `pxeserver` будет автоматически выполнен запуск ВМ `pxeclient` с опцией `gui = true`, т.е. появится окно virtualbox в котором увидеть меню загрузчика и по умолчанию будет выбрана автоматическая установка дистрибутива Centos8.
 
 ![Screenshot1](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot1.png)
 
