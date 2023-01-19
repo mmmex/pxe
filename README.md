@@ -30,7 +30,11 @@
 
 ![Screenshot2](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot2.png)
 
+Нажимаем `Reboot System`. В моменте видим `Press F12 to select boot device` и нажимаем F12.
+
 ![Screenshot3](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot3.png)
+
+Нажимаем 1 чтобы выполнить загрузку с жесткого диска.
 
 ![Screenshot4](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot4.png)
 
@@ -38,13 +42,13 @@
 
 ![Screenshot5](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot5.png)
 
-Можем проверить настройки из [kickstart скрипта](centos_pxe/ansible/templates/ks.j2):
+Можем проверить настройки, которые задавали в [kickstart скрипте](centos_pxe/ansible/templates/ks.j2):
 
 ![Screenshot6](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot6.png)
 
-### [VagrantFile](centos_pxe/Vagrantfile)
+### [Vagrantfile](centos_pxe/Vagrantfile)
 
-Добавил несколько параметров в раздел конфигурации ВМ `pxeclient`: размер видеопамяти (20MB) и графический контроллер (VMSVGA):
+Добавил несколько параметров в раздел конфигурации ВМ `pxeclient`, размер видеопамяти (20MB) и графический контроллер (VMSVGA):
 
 ```ruby
       vb.customize [
@@ -86,6 +90,6 @@ ks_admin_gecos: val
 
 Для генерации своего пароля можно использовать команду:
 
-```python
+```bash
 python3 -c 'import crypt,getpass; print(crypt.crypt(getpass.getpass(), crypt.mksalt(crypt.METHOD_SHA512)))'
 ```
