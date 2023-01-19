@@ -22,22 +22,25 @@
 
 * Запуск: `vagrant up`
 
-Настройка ВМ `pxeserver` будет выполнена автоматически. Шаг `Download ISO image CentOS 8.4.2105` может занять очень длительное время. После выполнения скрипта ansible для `pxeserver` будет автоматически выполнен запуск ВМ `pxeclient` с опцией `gui = true`, т.е. появится окно virtualbox в котором должны увидеть меню загрузчика и по умолчанию будет выбрана автоматическая установка дистрибутива Centos8.
+Настройка ВМ `pxeserver` будет выполнена автоматически. Шаг `Download ISO image CentOS 8.4.2105` может занять очень длительное время. После выполнения скрипта ansible для `pxeserver` будет автоматически выполнен запуск ВМ `pxeclient` с опцией `gui = true`, т.е. появится окно virtualbox в котором увидеть меню загрузчика и по умолчанию будет выбрана автоматическая установка дистрибутива Centos8.
 
-[Screenshot]()
+![Screenshot1](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot1.png)
 
 После установки можно выключить ВМ и выставить в настройках загрузку с жесткого диска или проще, перезагрузить, в момент загрузки нажать клавишу F12 и выбрать загрузку с жесткого диска.
 
-[Screenshot]()
+![Screenshot2](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot2.png)
+
+![Screenshot3](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot3.png)
+
+![Screenshot4](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot4.png)
 
 Видим что ОС успешно установлена.
 
-[Screenshot]()
+![Screenshot5](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot5.png)
 
 Можем проверить настройки из [kickstart скрипта](centos_pxe/ansible/templates/ks.j2):
 
-[Screenshot]()
-
+![Screenshot6](https://raw.githubusercontent.com/mmmex/pxe/master/screenshots/Screenshot6.png)
 
 ### [VagrantFile](centos_pxe/Vagrantfile)
 
