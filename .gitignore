@@ -1,0 +1,9 @@
+virtlab/
+centos_pxe/.vagrant/
+centos_pxe/*.iso
+centos_pxe/ansible.cfg
+centos_pxe/hosts
+*.log
+*.swp
+*.vdi
+TODO.md

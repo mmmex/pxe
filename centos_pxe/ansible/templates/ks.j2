@@ -1,0 +1,48 @@
+#version=RHEL8
+#Использование в установке только диска /dev/sda
+ignoredisk --only-use=sda
+autopart --type=lvm
+# Partition clearing information
+clearpart --all --initlabel --drives=sda
+# Use graphical install
+graphical
+# Keyboard layouts
+keyboard --vckeymap=us --xlayouts='us'
+# System language
+lang en_US.UTF-8
+#repo
+url --url=http://{{ pxe_server }}/{{ centos_ver }}/BaseOS/
+#url --url=http://ftp.mgts.by/pub/CentOS/${centos_version}/BaseOS/x86_64/os/
+
+# Network information
+network  --bootproto=dhcp --device=enp0s3 --ipv6=auto --activate
+network  --bootproto=dhcp --device=enp0s8 --onboot=off --ipv6=auto --activate
+network  --hostname=otus-pxe-client
+# Root password is 123
+rootpw --iscrypted {{ ks_root_password }}
+# Run the Setup Agent on first boot
+firstboot --enable
+# Do not configure the X Window System
+skipx
+# System services
+services --enabled="chronyd"
+# System timezone
+timezone Europe/Moscow --isUtc
+# Password is 123
+user --groups=wheel --name={{ ks_admin_username }} --password={{ ks_admin_password }} --iscrypted --gecos={{ ks_admin_gecos }}
+
+%packages
+@^minimal-environment
+kexec-tools
+
+%end
+
+%addon com_redhat_kdump --enable --reserve-mb='auto'
+
+%end
+
+%anaconda
+pwpolicy root --minlen=6 --minquality=1 --notstrict --nochanges --notempty
+pwpolicy user --minlen=6 --minquality=1 --notstrict --nochanges --emptyok
+pwpolicy luks --minlen=6 --minquality=1 --notstrict --nochanges --notempty
+%end

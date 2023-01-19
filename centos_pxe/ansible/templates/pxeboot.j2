@@ -1,0 +1,8 @@
+Alias /{{ centos_ver }} /iso
+
+# Указываем адрес директории /iso
+<Directory "/iso">
+    Options Indexes FollowSymLinks
+    # Разрешаем подключения со всех ip-адресов
+    Require all granted
+</Directory>

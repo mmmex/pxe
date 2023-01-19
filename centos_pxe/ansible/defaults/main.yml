@@ -1,0 +1,15 @@
+---
+dhcp_network: 10.0.0.0
+dhcp_mask: 255.255.255.0
+dhcp_range_min: 10.0.0.100
+dhcp_range_max: 10.0.0.120
+pxe_server: 10.0.0.20
+centos_ver: centos8
+name_ver: "CentOS 8.4"
+timeout_menu: 150
+lan_ip: enp0s3
+# ks default variables
+ks_root_password: "$6$4jRH5ccaw2WWlb6/$iA/8UYASUQKoXmCDVjo9JdBDOywZ42JXQnRJXN1BbbUF4xvBMj9VDV2g22/vVpqEz/CMBngv23HYH0/gFLcYW."
+ks_admin_username: val
+ks_admin_password: "$6$M.DMs9jPflsgd8K/$antagfnemEBjDj647y4V/XKkoAjE4buB9NSR.NML/hS84gtHN771/Spbw8Z2z5EJZ.WMJSbDtF07yuaVGrcdP."
+ks_admin_gecos: val
